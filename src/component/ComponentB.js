@@ -1,16 +1,21 @@
 import React, { useState } from 'react'
 
-const ComponentB = () => {
-    const [getInput, setGetInput] = useState("");
+
+const ComponentB = (props) => {
+    const [inputval, setinputval] = useState('');
+    console.log('B', props);
+
     const onChange = (e) => {
-        setGetInput(e.target.value)
+        setinputval(e.target.value);
+        props.handle(e.target.value)
 
 
     }
     return (
         <div>
-            <input type="text" value={getInput} onChange={onChange}></input>
-            <h2>{getInput}</h2>
+            <input type="text" placeholder='Enter your text here' value={inputval} onChange={onChange} />
+
+
         </div>
 
     );

@@ -1,8 +1,15 @@
 import React from 'react'
+import ComponentB from './ComponentB';
+import ComponentC from './ComponentC';
 
-const ComponentA = () => {
+
+const ComponentA = (props) => {
+    console.log('A', props);
     return (
-        <div>componentA
+        <div>
+            <h1>Component A </h1>
+            <ComponentB handle={props.handleInputVal} />
+            <ComponentC data={props.data} />
 
         </div>
     );
